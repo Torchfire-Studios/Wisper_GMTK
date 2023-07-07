@@ -61,7 +61,7 @@ public class Player_Controller : MonoBehaviour
 public static class Helpers
 {
     // Helper method to convert input vector to isometric space
-    private static Matrix4x4 _isoMatrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
+    private static Matrix4x4 _isoMatrix = Matrix4x4.Rotate(Quaternion.Euler(0, -135, 0));
     public static Vector3 ToIso(this Vector3 input) => _isoMatrix.MultiplyPoint3x4(input);
     // The ToIso() extension method converts a 3D vector from world space to isometric space.
     // It uses a rotation matrix to transform the vector.
