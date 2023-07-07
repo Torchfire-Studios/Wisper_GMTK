@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 247980006}
   - component: {fileID: 247980005}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Toaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fb75f03f67f544fa1f154e3ceb96a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prompt: 
+  _prompt: Charge Toaster
 --- !u!23 &247980007
 MeshRenderer:
   m_ObjectHideFlags: 0
