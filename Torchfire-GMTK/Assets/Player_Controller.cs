@@ -65,5 +65,5 @@ public static class Helpers
     public static Vector3 ToIso(this Vector3 input) => _isoMatrix.MultiplyPoint3x4(input);
     // The ToIso() extension method converts a 3D vector from world space to isometric space.
     // It uses a rotation matrix to transform the vector.
-    // In this case, the rotation is 45 degrees around the y-axis to align with an isometric perspective.
+    // In this case, the rotation is -135 degrees around the y-axis to align with an isometric perspective.
 }
