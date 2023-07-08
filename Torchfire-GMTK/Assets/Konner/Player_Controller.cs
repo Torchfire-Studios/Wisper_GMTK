@@ -51,6 +51,13 @@ public class Player_Controller : MonoBehaviour
     {
         Vector3 movement = _input.normalized; // Normalize the input vector to ensure consistent movement speed.
 
+        if (_input == Vector3.zero)
+        {
+            _rb.velocity = Vector3.zero; // Stop the player if no input
+            return;
+        }
+
+
         _rb.MovePosition(transform.position + movement.ToIso() * _speed * Time.deltaTime);
         // Move the player based on the input direction and speed.
         // ToIso() converts the input vector to isometric space.
