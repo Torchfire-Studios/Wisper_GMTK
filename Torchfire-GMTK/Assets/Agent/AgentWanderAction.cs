@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
+using AgentFSM;
 
 namespace myAgentFSM
 {
     [CreateAssetMenu(menuName = "FSM/Actions/Wander")]
-    public class AgentWanderAction : MonoBehaviour
+    public class AgentWanderAction : AgentFSMAction
     {
         bool hasPoint;
         public override void Execute(AgentBaseStateMachine stateMachine)
         {
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var randomPointOnNavMesh = stateMachine.GetComponent<RandomPointOnNavMesh>();
+
+
             Vector3 point;
             
 
@@ -22,10 +26,10 @@ namespace myAgentFSM
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
                 navMeshAgent.destination = point;
             }
+            Debug.Log(stateMachine.transform);
 
-            //if "go to" point does not exist
-                //Create new "go to" point
-            //Go to "go to" point
+            //get necessary components
+
             //if at "go to"
                 //sense
                 //if sensed
