@@ -9,11 +9,13 @@ public class StevenManager : MonoBehaviour
     public float stevenState = 0;
     [SerializeField] InsanityMeter meter;
     [SerializeField] EventManager eventManager;
+    [SerializeField] InteractableObject test;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("StevenEvents", 1f, 1f);
         eventManager.templateEvent.AddListener(StevenKills);
+
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class StevenManager : MonoBehaviour
     {
 
     }
+
 
     void StevenEvents()
     {
