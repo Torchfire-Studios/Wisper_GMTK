@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a4c8250fdd06347bfc1e8adcf9c3be, type: 3}
   m_Name: New Interactable
   m_EditorClassIdentifier: 
-  interactable: 
-  colliderRadius: 0
+  interactable: trest
+  colliderDiameter: 0
   Scalure: 0
   stressChange: 0
   active: 0
+  hasObject: 0
+  foundObject: {fileID: 0}
