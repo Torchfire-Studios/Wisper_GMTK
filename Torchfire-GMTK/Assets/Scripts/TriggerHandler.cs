@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerHandler : MonoBehaviour
 {
     public InteractableObject creator;
-    // Start is called before the first frame update
+    // This would trigger the scare/lure effect
     void OnTriggerEnter(Collider coll)
     {
         creator.TriggerActivated();
