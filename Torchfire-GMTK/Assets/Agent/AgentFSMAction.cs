@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AgentFSM
 {
-    public abstract class AgentFSMAction : MonoBehaviour
+    public abstract class AgentFSMAction : ScriptableObject
     {
         public abstract void Execute(AgentBaseStateMachine stateMachine);
         

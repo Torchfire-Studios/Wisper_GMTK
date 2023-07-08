@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace AgentFSM
 {
-    public sealed class AgentState : MonoBehaviour
+    [CreateAssetMenu(menuName = "FSM/State")]
+    public sealed class AgentState : AgentBaseState
     {
         [CreateAssetMenu(menuName = "FSM/State")]
         public sealed class State : AgentBaseState
