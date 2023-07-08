@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42fbde180c36f5e429b1dd966b8cf646, type: 3}
-  m_Name: AgentRemainInState
+  m_Script: {fileID: 11500000, guid: 82f77cb5d8e4d6b4c9da839757040dc6, type: 3}
+  m_Name: PatrolAction
   m_EditorClassIdentifier: 
