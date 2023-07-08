@@ -29,7 +29,7 @@ public class InsanityMeter : MonoBehaviour
     void gradualInsanity()
     {
 
-        instanityMeter.value -= (1f / 60f); //Naturally the insanity will top out at 8 minutes, to change minutes change 64 to square of desired minute
+        instanityMeter.value -= (1f / 60f); //Naturally decreases the insanity as a steady rate
 
     }
 
