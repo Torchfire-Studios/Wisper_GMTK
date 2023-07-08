@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 public class EventManager : MonoBehaviour
 {
+    //Use this to store all of your events
     public UnityEvent templateEvent;
-    // Start is called before the first frame update
+    public UnityEvent interacted;
+
 
 
 }
