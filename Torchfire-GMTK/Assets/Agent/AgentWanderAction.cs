@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 using AgentFSM;
+using System.Collections.Specialized;
 
 namespace myAgentFSM
 {
@@ -12,23 +13,28 @@ namespace myAgentFSM
         bool hasPoint;
         public override void Execute(AgentBaseStateMachine stateMachine)
         {
+            //get necessary components
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var randomPointOnNavMesh = stateMachine.GetComponent<RandomPointOnNavMesh>();
+            Vector3 point = stateMachine.transform.position;
 
 
-            Vector3 point;
             
-
-
             if (!hasPoint && randomPointOnNavMesh.RandomPoint(stateMachine.transform.position, 4f, out point))
             {
                 hasPoint = true;
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
                 navMeshAgent.destination = point;
             }
-            Debug.Log(stateMachine.transform);
+            if(Vector3.Distance(stateMachine.transform.position, point) > 1.5f)
+            {
+                Debug.Log("Close Enough");
+            }
 
-            //get necessary components
+
+            
+
+            
 
             //if at "go to"
                 //sense

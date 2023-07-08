@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using AgentFSM;
-using System.Collections.Specialized;
+
 //using System.Diagnostics;
 
 namespace myAgentFSM
