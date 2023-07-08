@@ -6,14 +6,14 @@ namespace AgentFSM
 {
     public class AgentBaseStateMachine : MonoBehaviour
     {
-        [SerializeField] private BaseState _initialState;
+        [SerializeField] private AgentBaseState _initialState;
 
         private void Awake()
         {
             CurrentState = _initialState;
         }
 
-        public BaseState CurrentState {get; set; }
+        public AgentBaseState CurrentState {get; set; }
 
         private void Update()
         {

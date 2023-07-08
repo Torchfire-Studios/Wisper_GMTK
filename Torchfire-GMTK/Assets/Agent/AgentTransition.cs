@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentTransition : MonoBehaviour
+namespace AgentFSM
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName = "FSM/Transition")]
+    public sealed class AgentTransition : ScriptableObject
     {
-        
-    }
+        public AgentDecision Decision;
+        public AgentBaseState TrueState;
+        public AgentBaseState FalseState;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Execute(AgentBaseStateMachine stateMachine)
+        {
+            if (Decision.Decide(stateMachine) && !(TrueState is AgentRemainInState))
+                stateMachine.CurrentState = TrueState;
+            else if (!(FalseState is AgentRemainInState))
+                stateMachine.CurrentState = FalseState;
+        }
     }
 }
+
+

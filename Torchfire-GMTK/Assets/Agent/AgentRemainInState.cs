@@ -5,7 +5,7 @@ using UnityEngine;
 namespace AgentFSM
 {
     [CreateAssetMenu(menuName = "FSM/Remain In State", fileName = "RemainInState")]
-    public class AgentRemainInState : MonoBehaviour
+    public sealed class AgentRemainInState : AgentBaseState
     {
         
     }

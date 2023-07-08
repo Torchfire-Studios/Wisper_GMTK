@@ -7,10 +7,10 @@ namespace AgentFSM
     public sealed class AgentState : MonoBehaviour
     {
         [CreateAssetMenu(menuName = "FSM/State")]
-        public sealed class State : BaseState
+        public sealed class State : AgentBaseState
         {
-            public List<AgentFSMAction> Action = new List<FSMAction>();
-            public List<AgentTransition> Transitions = new List<Transition>();
+            public List<AgentFSMAction> Action = new List<AgentFSMAction>();
+            public List<AgentTransition> Transitions = new List<AgentTransition>();
 
             public override void Execute(AgentBaseStateMachine machine)
             {

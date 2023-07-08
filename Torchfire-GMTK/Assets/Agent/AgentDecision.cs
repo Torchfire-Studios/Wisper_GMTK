@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AgentFSM
 {
-    public class AgentDecision : ScriptableObject
+    public abstract class AgentDecision : ScriptableObject
     {
         public abstract bool Decide(AgentBaseStateMachine state);
     }
