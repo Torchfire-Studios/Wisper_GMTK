@@ -1,26 +1,8 @@
 fileFormatVersion: 2
-guid: 803562105506f344891227338720b474
+guid: 8b46e4e874cda8242a5423491762bdd6
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: -4077140478702022799
-    second: Fire.1|Action
-  - first:
-      74: -3985656470011514977
-    second: Fire.1|Action.001
-  - first:
-      74: 8922751239451206883
-    second: Roundcube.016|Action
-  - first:
-      74: -1468204070686695051
-    second: Roundcube.016|Action.001
-  - first:
-      74: -1995095056336508885
-    second: Roundcube.015|Action
-  - first:
-      74: 4754147727871875225
-    second: Roundcube.015|Action.001
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2
