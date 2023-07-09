@@ -30,27 +30,19 @@ public class ActionScout : Node
         //look for interactables
 
         //look for points of interest
-        Collider[] interactables = Physics.OverlapSphere(
+        /*Collider[] interactables = Physics.OverlapSphere(
             _transform.position, AgentBT.interactRange, _enemyLayerMask);
         if (interactables.Length > 0)
         {
-            foreach (var collider in interactables){
-                Debug.Log(collider.gameObject.layer == _enemyLayerMask);
-            }
-
-            //Rigidbody rb = interactables[0].gameObject.GetComponent<Rigidbody>();
-            //rb.AddForce(Vector3.forward * 10f, ForceMode.Force);
             AgentInteractables interactScript = interactables[0].transform.gameObject.GetComponent<AgentInteractables>();
-            //interactScript.Interact();
-            
             AgentBT.agentState = AgentState.LURED;
             state = NodeState.SUCCESS;
             return state;
-        }
+        }*/
 
         state = NodeState.SUCCESS;
         return state;
-        /*
+        
 
         //look for points of interest
         Collider[] colliders = Physics.OverlapSphere(
@@ -79,7 +71,7 @@ public class ActionScout : Node
 
         state = NodeState.SUCCESS;
         return state;
-        */
+        
     }
 
     public bool RandomPoint(Vector3 center, float range, out Vector3 result)

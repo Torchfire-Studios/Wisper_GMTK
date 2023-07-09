@@ -12,12 +12,14 @@ public class ActionMove : Node
     //private AgentState _agentState;
     //private AgentState _prevAgentState;
     private NavMeshAgent _navMeshAgent;
+    private Animator _animator;
     
 
     public ActionMove(Transform transform/*, Animator anim, AgentState agentState*/)
     {
         _transform = transform;
         _navMeshAgent = transform.GetComponent<NavMeshAgent>();
+        _animator = transform.GetComponentInChildren<Animator>();
         //_anim = anim;
         //_agentState = agentState;
     }
@@ -25,8 +27,9 @@ public class ActionMove : Node
     public override NodeState Evaluate()
     {
         //go to destination
-        Debug.Log(_navMeshAgent.destination +"  "+ AgentBT.destination);
         _navMeshAgent.destination = AgentBT.destination;
+        Debug.Log(_animator);
+        _animator.SetBool("IsScared", true);
         //If the agent is near it's destination
         //make new state, set destination to default and return success
         if (Vector3.Distance(_transform.position, AgentBT.destination) < 0.1f)
