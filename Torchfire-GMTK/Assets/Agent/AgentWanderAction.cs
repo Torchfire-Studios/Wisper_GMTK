@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 using AgentFSM;
-using System.Collections.Specialized;
 
 namespace myAgentFSM
 {
     [CreateAssetMenu(menuName = "FSM/Actions/Wander")]
     public class AgentWanderAction : AgentFSMAction
     {
-        bool hasPoint;
+        public bool hasPoint = false;
         public override void Execute(AgentBaseStateMachine stateMachine)
         {
             //get necessary components
             var navMeshAgent = stateMachine.GetComponent<NavMeshAgent>();
             var randomPointOnNavMesh = stateMachine.GetComponent<RandomPointOnNavMesh>();
-            Vector3 point = stateMachine.transform.position;
+            Vector3 point = navMeshAgent.destination;
 
 
             
@@ -26,22 +25,24 @@ namespace myAgentFSM
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
                 navMeshAgent.destination = point;
             }
-            if(Vector3.Distance(stateMachine.transform.position, point) > 1.5f)
+
+            if (Vector3.Distance(stateMachine.transform.position, point) < 0.5f)
             {
-                Debug.Log("Close Enough");
+                hasPoint = false;
             }
 
 
-            
 
-            
+
+
+
 
             //if at "go to"
-                //sense
-                //if sensed
-                    //transition
-               //else
-                    //reset "go to" point 
+            //sense
+            //if sensed
+            //transition
+            //else
+            //reset "go to" point 
         }
     }
 }

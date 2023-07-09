@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Patrol
   m_EditorClassIdentifier: 
   Action:
-  - {fileID: 11400000, guid: ac5dda21817c8674882e43f894a4bf3a, type: 2}
-  Transitions: []
+  - {fileID: 11400000, guid: 5205c6b5dcf2004469c78168151d3770, type: 2}
+  Transitions:
+  - {fileID: 11400000, guid: b9d36bee143611a42ba9ae820a4708b1, type: 2}
