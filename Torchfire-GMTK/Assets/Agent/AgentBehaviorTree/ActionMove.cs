@@ -4,7 +4,6 @@ using UnityEngine;
 using BehaviorTree;
 using UnityEngine.AI;
 
-
 public class ActionMove : Node
 {
     //private static int _enemyLayerMask = 1 << 6;
@@ -26,6 +25,7 @@ public class ActionMove : Node
     public override NodeState Evaluate()
     {
         //go to destination
+        Debug.Log(_navMeshAgent.destination +"  "+ AgentBT.destination);
         _navMeshAgent.destination = AgentBT.destination;
         //If the agent is near it's destination
         //make new state, set destination to default and return success

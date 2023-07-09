@@ -17,7 +17,6 @@ public class CheckInvestigateState : Node
 
         if (AgentBT.agentState == AgentState.INVESTIGATE)
         {
-            Debug.Log("investigate");
             state = NodeState.SUCCESS;
             return state;
         }

@@ -16,7 +16,7 @@ public class AgentBT : Tree
     public static UnityEngine.Vector3 destination;
     public static float fovRange = 2f;
     public static float interactRange = 0.5f;
-    public static AgentState agentState = AgentState.IDLE;
+    public static AgentState agentState = AgentState.INVESTIGATE;
     //public Vector3 target; 
 
     protected override Node SetupTree()
