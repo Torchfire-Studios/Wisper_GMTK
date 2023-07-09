@@ -10,15 +10,15 @@ public class InteractableDetection : MonoBehaviour
     //Temporary system for interaction highlighting when in range, changes material color
     void OnTriggerEnter(Collider coll)
     {
-        eventManager.interacted.Invoke();
-        Debug.Log("got here");
-        creator.foundObject.GetComponent<MeshRenderer>().material = creator.highlight;
+       /* if (coll.CompareTag("Agent"))
+        {
+            //eventManager.interacted.Invoke();
+            Debug.Log(coll.transform.name);
+            Transform go = gameObject.transform.GetChild(2);
+            go.gameObject.SetActive(true);
+            // creator.foundObject.GetComponent<MeshRenderer>().material = creator.highlight;
+        }
 
-    }
-    void OnTriggerExit(Collider coll)
-    {
-        creator.foundObject.GetComponent<MeshRenderer>().material = creator.defaultMat;
-
-
+        */
     }
 }
