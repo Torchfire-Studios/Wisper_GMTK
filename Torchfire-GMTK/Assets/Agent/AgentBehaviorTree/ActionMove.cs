@@ -25,17 +25,14 @@ public class ActionMove : Node
 
     public override NodeState Evaluate()
     {
-        if(AgentBT.destination == null)
-        {
-            //_navMeshAgent.destination = AgentBT.target;
-            Debug.Log("No Target");
-        }
-
+        //go to destination
         _navMeshAgent.destination = AgentBT.destination;
-        //if agent state changed? IDLE -> Scared
-        if (Vector3.Distance(_transform.position, AgentBT.destination) < 0.05f)
+        //If the agent is near it's destination
+        //make new state, set destination to default and return success
+        if (Vector3.Distance(_transform.position, AgentBT.destination) < 0.1f)
         {
-            AgentBT.agentState = AgentState.IDLE;
+            AgentBT.agentState = AgentState.INVESTIGATE;
+            AgentBT.destination = _transform.position;
             state = NodeState.SUCCESS;
             return state;
         }

@@ -15,9 +15,8 @@ public class CheckIdleState : Node
     public override NodeState Evaluate()
     {
         
-        if (_agentState == AgentState.IDLE)
+        if (AgentBT.agentState == AgentState.IDLE)
         {
-            Debug.Log("Idle");
             state = NodeState.SUCCESS;
             return state;
         }

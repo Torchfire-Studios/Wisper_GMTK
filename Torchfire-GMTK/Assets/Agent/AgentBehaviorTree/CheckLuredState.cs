@@ -15,7 +15,7 @@ public class CheckLuredState : Node
     public override NodeState Evaluate()
     {
         
-        if (_agentState == AgentState.LURED)
+        if (AgentBT.agentState == AgentState.LURED)
         {
             Debug.Log("Lured");
             state = NodeState.SUCCESS;

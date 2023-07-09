@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
 
-public class CheckScaredState : Node
+public class CheckInvestigateState : Node
 {
     private AgentState _agentState;
 
-    public CheckScaredState(AgentState agentState)
+    public CheckInvestigateState(AgentState agentState)
     {
-        _agentState = agentState;
+        //_agentState = agentState;
     }
 
     public override NodeState Evaluate()
     {
-        
-        if (AgentBT.agentState == AgentState.SCARED)
+
+        if (AgentBT.agentState == AgentState.INVESTIGATE)
         {
-            Debug.Log("Scared");
+            Debug.Log("investigate");
             state = NodeState.SUCCESS;
             return state;
         }
