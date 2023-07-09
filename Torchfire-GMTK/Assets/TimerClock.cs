@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using System.Collections;
 
 public class TimerClock : MonoBehaviour
 {
@@ -49,10 +50,10 @@ public class TimerClock : MonoBehaviour
         }
         else
         {
-            if (counter==20)
+            if (counter>=10)
             {
                 //UnityEvent
-                Debug.Log("GameOver");
+                Application.Quit();
                 isTimerRunning = false;
                 return;
             }
