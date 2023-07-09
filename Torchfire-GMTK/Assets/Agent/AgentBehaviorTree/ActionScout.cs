@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
 using UnityEngine.AI;
+using System.Collections.ObjectModel;
 
 
 public class ActionScout : Node
 {
-    private static int _enemyLayerMask = LayerMask.NameToLayer("enemy");
+    private static int _enemyLayerMask = 7;
     private Transform _transform; //agent's transform
     private NavMeshAgent _navMeshAgent;
     private Vector3 point;
@@ -19,6 +20,7 @@ public class ActionScout : Node
 
     public override NodeState Evaluate()
     {
+       // _enemyLayerMask = LayerMask.NameToLayer("interact");
         if (Vector3.Distance(_transform.position, AgentBT.destination) > 0.2f)//has destination
         {
             state = NodeState.RUNNING;
@@ -30,13 +32,17 @@ public class ActionScout : Node
         //look for points of interest
         Collider[] interactables = Physics.OverlapSphere(
             _transform.position, AgentBT.interactRange, _enemyLayerMask);
-        Debug.Log(interactables);
         if (interactables.Length > 0)
         {
+            foreach (var collider in interactables){
+                Debug.Log(collider.gameObject.layer == _enemyLayerMask);
+            }
+
             //Rigidbody rb = interactables[0].gameObject.GetComponent<Rigidbody>();
             //rb.AddForce(Vector3.forward * 10f, ForceMode.Force);
-            interactables[0].gameObject.GetComponent<AgentInteractables>().Interact();
-            Debug.Log("interacted");
+            AgentInteractables interactScript = interactables[0].transform.gameObject.GetComponent<AgentInteractables>();
+            //interactScript.Interact();
+            
             AgentBT.agentState = AgentState.LURED;
             state = NodeState.SUCCESS;
             return state;
